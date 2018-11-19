@@ -25,7 +25,9 @@
 			</router-link>
 		</nav>
       <!-- 中间 -->
-     <router-view></router-view>
+     <transition>
+    	<router-view></router-view>
+	</transition>
   </div>
 </template>
 
@@ -35,7 +37,23 @@
 
 <style lang="less">
     .app-container {
-        padding-top: 40px;
+		padding-top: 40px;
+		padding-bottom: 50px;
+		overflow-x: hidden;
+
+	.v-enter{
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	.v-leave-to{
+		position: absolute;
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	.v-enter-active,
+	.v-leave-active{
+		transition: all 0.8s ease
+	}
     }
 </style>
 
