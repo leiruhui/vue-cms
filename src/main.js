@@ -10,12 +10,13 @@ Vue.use(VueResource)
 Vue.config.productionTip = false
 // 引入header
 import { Header,Swipe, SwipeItem  } from 'mint-ui';
+import './lib/mui/css/mui.min.css'
+import './lib/mui/css/icons-extra.css'
 // 注册header组件
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
-import './lib/mui/css/mui.min.css'
-import './lib/mui/css/icons-extra.css'
+
 
 /* eslint-disable no-new */
 import app from './router/index.js'

@@ -7,7 +7,31 @@
                 </a>
             </mt-swipe-item>
         </mt-swipe>
+         <ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <img src="../../src/images/menu1.png" alt="">
+		                    <div class="mui-media-body">Home</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <img src="../../src/images/menu2.png" alt="">
+		                    <div class="mui-media-body">Email</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <img src="../../src/images/menu3.png" alt="">
+		                    <div class="mui-media-body">Chat</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <img src="../../src/images/menu4.png" alt="">
+		                    <div class="mui-media-body">location</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <img src="../../src/images/menu5.png" alt="">
+		                    <div class="mui-media-body">Search</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                    <img src="../../src/images/menu6.png" alt="">
+		                    <div class="mui-media-body">Phone</div></a></li>
+		        </ul> 
+        
+      
     </div>
+
+    
 </template>
 
 <script>
@@ -60,6 +84,21 @@ export default {
 
       img {
         width: 100%;
+      }
+    }
+  }
+    // 九宫格
+    .mui-grid-view {
+    background-color: #fff;
+    border: none;
+    .mui-table-view-cell {
+      border: none;
+      img {
+        width: 60px;
+        height: 60px;
+      }
+      .mui-media-body {
+        font-size: 13px;
       }
     }
   }
