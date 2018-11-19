@@ -9,11 +9,11 @@ Vue.use(VueResource)
 
 Vue.config.productionTip = false
 // 引入header
-import { Header,Tabbar, TabItem  } from 'mint-ui';
+import { Header,Swipe, SwipeItem  } from 'mint-ui';
 // 注册header组件
 Vue.component(Header.name, Header);
-Vue.component(Tabbar.name, Tabbar);
-Vue.component(TabItem.name, TabItem);
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 
