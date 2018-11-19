@@ -11,6 +11,7 @@ Vue.component(Header.name, Header);
 Vue.component(Tabbar.name, Tabbar);
 Vue.component(TabItem.name, TabItem);
 import './lib/mui/css/mui.min.css'
+import './lib/mui/css/icons-extra.css'
 
 /* eslint-disable no-new */
 
