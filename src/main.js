@@ -6,6 +6,8 @@ import router from './router'
 import VueResource from 'vue-resource'
 // 安装路由
 Vue.use(VueResource)
+// 请求根路径
+Vue.http.options.root = 'http://lovegf.cn:8899'
 
 Vue.config.productionTip = false
 // 引入header
@@ -17,6 +19,13 @@ Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 
+// 定义全局的过滤器需安装: npm i moment -S
+// 导入格式化时间的插件
+import moment from 'moment';
+// 定义全局的过滤器
+Vue.filter('dateForm',function(dataStr,pattern='YYYY-MM-DD HH:mm:ss'){
+    return moment(dataStr).format(pattern)
+})
 
 /* eslint-disable no-new */
 import app from './router/index.js'
