@@ -8,10 +8,13 @@
 
     <hr>
     <div class="content" v-html="newsinfo.content"></div>
+    <comment-box :id='this.id'></comment-box>
     </div>
 </template>
 <script>
 import { Toast} from 'mint-ui'
+// 引用评论的子组件
+import comment from '../comment'
 export default {
     data(){
         return {
@@ -27,13 +30,17 @@ export default {
             this.$http.get('api/getnew/'+this.id).then(resulte=>{
                 if(resulte.body.status==0){
                     this.newsinfo = resulte.body.message[0]
-                    console.log(resulte)
+                    // console.log(resulte)
                 }else{
                     Toast('获取新闻详情失败!!')
                 }
             })
         }
     },
+    components:{
+        // 用来注册子组件的节点
+        "comment-box":comment
+    }
 }
 </script>
 <style lang="less">
