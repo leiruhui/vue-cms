@@ -3,7 +3,7 @@
         <ul class="mui-table-view">
 					<!-- 把数据进行循环 有id的情况下最好把key绑定给id -->
 				<li class="mui-table-view-cell mui-media" v-for="item in newsList" :key='item.id'>
-					<rounter-link :to="'/home/newsinfo/' + item.id">
+					<router-link :to="'/home/newsinfo/' + item.id">
 						<img class="mui-media-object mui-pull-left" :src="item.img_url">
 						<div class="mui-media-body">
 							<h3>{{ item.title }}</h3>
@@ -11,7 +11,7 @@
 							<span class='mui-ellipsis'>发布时间:{{ item.add_time | dateForm}}</span>
                             <span class='mui-ellipsis mui-pull-right' >点击:{{ item.click }}次</span>
 						</div>
-					</rounter-link>
+					</router-link>
 				</li>
 			</ul>
     </div>
@@ -37,7 +37,7 @@ export default {
 				if(resulte.body.status==0){
 					// 把resulte中的message数据赋值到直接创建的空的数组(this.newsList)中
 					this.newsList = resulte.body.message
-					console.log(resulte)
+					// console.log(resulte)
 				}else{//判断失败
 					Toast('获取新闻列表失败!!')
 				}

@@ -8,6 +8,7 @@ import HomeComponent from '../../page/home/'
   import ShopcarComponent from '../../page/shopcar/'
   import SearchComponent from '../../page/search/'
   import newsList from '../../page/newsList'
+  import newsinfo from '../../page/newsinfo'
   // 暴露目标
 export default new Router({
   routes: [
@@ -16,7 +17,8 @@ export default new Router({
       { path: '/member', component: MemberComponent },
       { path: '/shopcar', component: ShopcarComponent },
       { path: '/search', component: SearchComponent },
-      { path:'/home/newsList',component:newsList}
+      { path:'/home/newsList',component:newsList},
+      { path:'/home/newsinfo/:id',component: newsinfo}
   ],
   linkActiveClass: 'mui-active'
 })
