@@ -8,6 +8,8 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 // 请求根路径
 Vue.http.options.root = 'http://lovegf.cn:8899'
+// 全局定义post创建时的数据格式
+Vue.http.options.emulateJSON = true;
 
 Vue.config.productionTip = false
 // 引入header

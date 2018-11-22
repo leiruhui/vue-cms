@@ -32,11 +32,11 @@ export default {
 	},
 	methods:{
 		getNewsList(){ //get请求中一种方法 名字可以随便起主要还是看方法中的get的请求
-			this.$http.get('api/getnewslist').then(resulte =>{
+			this.$http.get('api/getnewslist').then(result =>{
 				// 判断resulte中的status是否为0 如果为0 的话就是判断获取成功就进行下一步的代码
-				if(resulte.body.status==0){
+				if(result.body.status===0){
 					// 把resulte中的message数据赋值到直接创建的空的数组(this.newsList)中
-					this.newsList = resulte.body.message
+					this.newsList = result.body.message
 					// console.log(resulte)
 				}else{//判断失败
 					Toast('获取新闻列表失败!!')
