@@ -7,9 +7,9 @@ import HomeComponent from '../../page/home/'
   import MemberComponent from '../../page/member/'
   import ShopcarComponent from '../../page/shopcar/'
   import SearchComponent from '../../page/search/'
-  import newsList from '../../page/newsList'
-  import newsinfo from '../../page/newsinfo'
-  import photo from '../../page/photo'
+  import newsList from '../../page/newsList/'
+  import newsinfo from '../../page/newsinfo/'
+  import photo from '../../page/photo/'
   // 暴露目标
 export default new Router({
   routes: [
@@ -20,7 +20,7 @@ export default new Router({
       { path: '/search', component: SearchComponent },
       { path:'/home/newsList',component:newsList},
       { path:'/home/newsinfo/:id',component: newsinfo},
-      {path:'/photo',component:photo}
+      {path:'/home/photo',component:photo}
   ],
   linkActiveClass: 'mui-active'
 })
