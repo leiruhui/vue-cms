@@ -16,11 +16,15 @@ Vue.config.productionTip = false
 import { Header,Swipe, SwipeItem ,Button } from 'mint-ui';
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
+import { Lazyload } from 'mint-ui'
+
 // 注册header组件
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
-Vue.component(Button.name, Button)
+Vue.component(Button.name, Button);
+Vue.use(Lazyload);
+
 
 // 定义全局的过滤器需安装: npm i moment -S
 // 导入格式化时间的插件
