@@ -10,6 +10,8 @@ import HomeComponent from '../../page/home/'
   import newsList from '../../page/newsList/'
   import newsinfo from '../../page/newsinfo/'
   import photo from '../../page/photo/'
+  import photoinfo from '../../page/photoinfo/'
+  import goodsList from '../../page/goodslist' 
   // 暴露目标
 export default new Router({
   routes: [
@@ -20,7 +22,9 @@ export default new Router({
       { path: '/search', component: SearchComponent },
       { path:'/home/newsList',component:newsList},
       { path:'/home/newsinfo/:id',component: newsinfo},
-      {path:'/home/photo',component:photo}
+      { path:'/home/photo',component:photo},
+      { path:'/home/photoinfo/:id',component:photoinfo},
+      { path:'/home/goodslist' , component:goodsList}
   ],
   linkActiveClass: 'mui-active'
 })

@@ -25,7 +25,9 @@ Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Button.name, Button);
 Vue.use(Lazyload);
 
-
+// 安装 图片预览插件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 // 定义全局的过滤器需安装: npm i moment -S
 // 导入格式化时间的插件
 import moment from 'moment';
