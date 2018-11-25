@@ -11,7 +11,8 @@ import HomeComponent from '../../page/home/'
   import newsinfo from '../../page/newsinfo/'
   import photo from '../../page/photo/'
   import photoinfo from '../../page/photoinfo/'
-  import goodsList from '../../page/goodslist' 
+  import goodsList from '../../page/goodslist/' 
+  import goodsInfo from '../../page/goodsinfo/'
   // 暴露目标
 export default new Router({
   routes: [
@@ -24,7 +25,8 @@ export default new Router({
       { path:'/home/newsinfo/:id',component: newsinfo},
       { path:'/home/photo',component:photo},
       { path:'/home/photoinfo/:id',component:photoinfo},
-      { path:'/home/goodslist' , component:goodsList}
+      { path:'/home/goodslist' , component:goodsList},
+      { path:'/home/goodsinfo/:id' , component:goodsInfo} 
   ],
   linkActiveClass: 'mui-active'
 })

@@ -1,12 +1,16 @@
+
 <template>
     <div class="home-container">
-        <mt-swipe class="binner-container" :auto="4000">
-            <mt-swipe-item v-for="(item,index) in bannerList" :key="index">
-                <a :href="item.url">
-                    <img :src="item.img">
-                </a>
-            </mt-swipe-item>
-        </mt-swipe>
+      <!-- 轮播图区域 -->
+      <swiper :bannerList='bannerList' ></swiper>
+      <!-- <mt-swipe class="binner-container" :auto="4000">
+          <mt-swipe-item v-for="(item,index) in bannerList" :key="index">
+              <a :href="item.url">
+                  <img :src="item.img">
+              </a>
+          </mt-swipe-item>
+      </mt-swipe> -->
+
          <ul class="mui-table-view mui-grid-view mui-grid-9">
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="./home/newsList">
 		                    <img src="../../src/images/menu1.png" alt="">
@@ -36,10 +40,12 @@
 
 <script>
 import { Toast } from "mint-ui"
+import swiper from '../swiper/index.vue'
+// console.log(swiper)
 export default {
     data() {
     return {
-      bannerList: []
+      bannerList: [] //保存轮播图的数组
     };
   },
   created() {
@@ -48,46 +54,50 @@ export default {
   methods: {
     getBannerData() {
       this.$http.get("api/getlunbo").then(result => {
+        // console.log(result)
         if (result.body.status === 0) {
           this.bannerList = result.body.message;
         } else {
           Toast("获取轮播图数据失败!请重试!");
         }
       });
-    }
+    },
   },
+    components: {
+      swiper
+    },
 }
 </script>
 
 <style lang="less">
     .home-container {
   // 轮播图的样式
-  .binner-container {
-    height: 200px;
+  // .binner-container {
+  //   height: 200px;
 
-    .mint-swipe-item {
+  //   .mint-swipe-item {
       
-      &:nth-child(1) {
-        background-color: yellow;
-      }
-      &:nth-child(2) {
-        background-color: blue;
-      }
-      &:nth-child(3) {
-        background-color: skyblue;
-      }
+  //     &:nth-child(1) {
+  //       background-color: yellow;
+  //     }
+  //     &:nth-child(2) {
+  //       background-color: blue;
+  //     }
+  //     &:nth-child(3) {
+  //       background-color: skyblue;
+  //     }
 
-      a {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
+  //     a {
+  //       display: block;
+  //       width: 100%;
+  //       height: 100%;
+  //     }
 
-      img {
-        width: 100%;
-      }
-    }
-  }
+  //     img {
+  //       width: 100%;
+  //     }
+  //   }
+  // }
     // 九宫格
     .mui-grid-view {
     background-color: #fff;
